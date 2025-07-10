@@ -9,11 +9,15 @@
   <h1>Facebook Photo Comment Viewer</h1>
   <section>
     <h2>Instructions</h2>
-    <p><!-- Placeholder for instructions --></p>
+    <p>
+      <!-- Placeholder for instructions -->
+      <strong>What is a hosted bookmarklet?</strong><br>
+      A hosted bookmarklet is a bookmark that loads JavaScript from a server, so you always get the latest version. Drag the link below to your bookmarks bar, or right-click and bookmark it. When you use it, it will load the latest code from this site.
+    </p>
   </section>
   <section>
     <h2>Step 1: Get the Bookmarklet</h2>
-    <!-- Drag-and-drop bookmarklet link using hosted bookmarklet.js -->
+    <!-- Hosted bookmarklet link -->
     <a href="javascript:(function(){var s=document.createElement('script');s.src=location.origin+'/bookmarklet.js?cache='+Math.floor(Math.random()*9999+1);document.head.appendChild(s);})();"
       id="bookmarklet-link"
       style="display:inline-block;padding:0.5em 1em;background:#e3e3e3;border-radius:4px;text-decoration:none;color:#222;font-weight:bold;cursor:grab;"
@@ -24,9 +28,7 @@
     <p style="font-size:0.9em;margin-top:0.5em;">
       If you can't drag, right-click and "Bookmark Link" or copy the code below:
     </p>
-    <textarea readonly rows="3" style="width:100%;font-size:0.9em;" onclick="this.select()">
-javascript:(function(){var s=document.createElement('script');s.src=location.origin+'/bookmarklet.js?cache='+Math.floor(Math.random()*9999+1);document.head.appendChild(s);})();
-    </textarea>
+    <textarea readonly rows="3" style="width:100%;font-size:0.9em;" onclick="this.select()">javascript:(function(){var s=document.createElement('script');s.src=location.origin+'/bookmarklet.js?cache='+Math.floor(Math.random()*9999+1);document.head.appendChild(s);})();</textarea>
   </section>
   <section>
     <h2>Step 2: Paste JSON Output</h2>
