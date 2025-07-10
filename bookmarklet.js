@@ -3,8 +3,7 @@
 // including the main photo URL, post author, date, location, engagement metrics,
 // and comments with their avatars.
 
-javascript:(function() {
-    "use strict";
+"use strict";
 
     /**
      * Finds the core container elements on the Facebook page needed for scraping.
@@ -424,5 +423,6 @@ javascript:(function() {
     }
 
     // Execute the main scraper function when the bookmarklet is run
+    runScraper();
     runScraper();
 })();
