@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Photo Comments</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="photo-viewer-container">
+        <!-- Section for the main image and its controls -->
+        <section id="image-section" class="image-container">
+            <!-- Main image will be loaded here by JS -->
+            <img id="main-photo" alt="Main post" class="main-image">
+            
+            <!-- Container for overlay comments -->
+            <div id="overlay-comments-container" class="overlay-comments">
+                <!-- Overlay comments will be injected here by script.js -->
+            </div>
+
+             <!-- Action buttons overlaid on the image -->
+            <div class="image-controls">
+                <button aria-label="Zoom In" class="control-button">
+                    <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3h-6" /></svg>
+                </button>
+                <button aria-label="Zoom Out" class="control-button">
+                     <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7" /></svg>
+                </button>
+                 <button aria-label="Tag photo" class="control-button">
+                    <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5a.997.997 0 01.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" /></svg>
+                </button>
+                <button aria-label="Enter full-screen" class="control-button">
+                    <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 1v4m0 0h-4m4 0l-5-5" /></svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Sidebar for post details and comments -->
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <div class="author-info">
+                    <!-- Author details will be loaded here by JS -->
+                    <img id="author-avatar" alt="Author's avatar" class="avatar-large">
+                    <div class="author-details">
+                        <p id="author-name" class="author-name"></p>
+                        <p id="post-meta" class="post-meta">
+                            <!-- Date and location loaded here -->
+                            <svg class="globe-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 009 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.987 5.987 0 0114.168 8 6.012 6.012 0 0111.912 10.706C11.488 10.27 11.026 10 10.5 10A1.5 1.5 0 009 8.5V8a2 2 0 01-4 0 2 2 0 00-1.523 1.943A5.987 5.987 0 005.832 8z" clip-rule="evenodd"></path></svg>
+                        </p>
+                    </div>
+                </div>
+            </header>
+            
+            <section class="post-stats">
+                <div class="likes-info">
+                    <div class="like-icon-wrapper">
+                        <svg class="like-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)"><path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.562 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"></path></svg>
+                    </div>
+                    <!-- Likes info loaded here -->
+                    <span id="like-details"></span>
+                </div>
+                <!-- Comment count loaded here -->
+                <span id="total-comments-text"></span>
+            </section>
+
+            <section class="comments-header">
+                 <h2>Comments (<span id="comment-counter">0</span>)</h2>
+            </section>
+
+            <section id="comments-container" class="comment-section">
+                <!-- Comments will be added here dynamically by script.js -->
+            </section>
+            
+            <footer class="sidebar-footer">
+                <div class="comment-input-wrapper">
+                    <!-- User avatar loaded here -->
+                    <img id="user-avatar" alt="Your avatar" class="avatar-small">
+                    <div class="comment-input-box">Write a comment...</div>
+                </div>
+            </footer>
+        </aside>
+    </main>
+
+    <!-- Note for users -->
+    <noscript>
+        <p>This page requires JavaScript to function.</p>
+    </noscript>
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
